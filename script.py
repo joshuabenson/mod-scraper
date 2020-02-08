@@ -26,7 +26,8 @@ class TestTemplate(unittest.TestCase):
         """Find and click top-right button"""
         try:
             self.driver.get('https://www.curseforge.com/minecraft/modpacks')
-            # el = self.driver.find_element_by_class_name('btn-header')
+            cookieAccept = self.driver.find_element_by_xpath('/html/body/div[3]/div/div/div[2]/div[2]')
+            cookieAccept.click()
             els = self.driver.find_elements_by_xpath('//a[contains(@href,"download")]')
             for el in els:
                 el.click()
